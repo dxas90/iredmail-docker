@@ -58,6 +58,7 @@ RUN sed s/$(hostname)/$HOSTNAME.$DOMAIN/ /etc/hosts > /tmp/hosts_ \
        AUTO_CLEANUP_REPLACE_MYSQL_CONFIG=y \
        AUTO_CLEANUP_RESTART_POSTFIX=n \
        bash iRedMail.sh \
+    && apt-get install dovecot-ldap \
     && apt-get autoremove -y -q \
     && apt-get clean -y -q
 
